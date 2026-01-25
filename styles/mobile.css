@@ -1,0 +1,110 @@
+@media screen and (max-width: 630px) {
+  header nav#nav-esq {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  header nav#nav-esq div#logo {
+    width: 75px;
+    height: 75px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: -3rem;
+  }
+
+  header nav#nav-esq ul#icone-menu {
+    display: flex;
+    position: relative;
+    width: 90px;
+    height: 90%;
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: auto;
+    top: 10px;
+    left: 15px;
+  }
+
+  header nav#nav-esq ul#icone-menu li {
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 0.3s ease-in-out;
+  }
+
+  header nav#nav-esq ul#icone-menu li ion-icon {
+    color: black;
+    font-size: 40px;
+  }
+
+  header nav#nav-esq ul#icone-menu li#menu {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  header nav#nav-esq ul#icone-menu li#menuX {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  header nav#nav-esq ul#icone-menu.ativo li#menu {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  header nav#nav-esq ul#icone-menu.ativo li#menuX {
+    opacity: 1;
+    transform: scale(1);
+    color: white;
+  }
+
+  header nav#nav-esq ul#menu-principal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    right: 0;
+    height: 100vh;
+    padding-top: 0.85rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 140, 252, 1),
+      rgba(252, 226, 13, 0.65)
+    );
+    position: fixed;
+    top: 90px;
+    z-index: 1001;
+    backdrop-filter: blur(0.75px);
+  }
+
+  header nav#nav-esq ul#menu-principal li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .chamada h1 img {
+    width: 225px !important;
+    height: auto;
+  }
+
+  .chamada h2 {
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    padding: 0 1rem;
+  }
+  body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
