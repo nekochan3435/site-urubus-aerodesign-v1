@@ -1,0 +1,40 @@
+@media screen and (max-width: 630px){
+    /*==MENU HAMBURGUER==*/
+    header nav#nav-esq{
+        justify-content: space-between;
+    }
+
+    header nav#nav-esq ul#icone-menu{
+        display: flex;
+    }
+    header nav#nav-esq ul#icone-menu{
+        display: flex;
+    }
+    header nav#nav-esq ul#icone-menu li#menuX{
+        display: none;
+     }
+
+    /*MENU PRINCIPAL*/
+    header nav#nav-esq ul#menu-principal{
+        flex-direction: column;
+        width: 80%;
+        height: 95vh;
+        padding-top: .5rem;
+        background: linear-gradient(to bottom, #148CFC, #FCE20D);
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        z-index: 999;
+
+        display: none;
+    }
+
+    .chamada h1 img {
+        width: 250px; /* Tamanho menor para mobile */
+    }
+    
+    .chamada h2 {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
