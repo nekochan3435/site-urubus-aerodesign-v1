@@ -38,121 +38,161 @@ Cores
   box-sizing: border-box;
 }
 
-.chamada {
-    flex: 1; /* Ocupa o restante da altura */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.chamada h1 img {
-    max-width: 100%; 
-    height: auto; 
-    width: 300px; 
-    display: block; 
-    margin: 0 auto 2rem auto;
-    animation: flutuarSuave 7s ease-in-out infinite;
-}
-
-.chamada h2 {
-    font-size: 1.2rem;
-    color: #000;
-    max-width: 600px;
-    margin-top: 2rem;
-    line-height: 1.5;
-}
-
 @keyframes flutuarSuave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    25% {
-        transform: translateY(-10px) ; /* Sobe */
-    }
-    50% {
-        transform: translateY(5px); /* Desce um pouco mais */
-    }
-    75% {
-        transform: translateY(-5px); /* Sobe de novo */
-    }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px); /* Sobe */
+  }
+  50% {
+    transform: translateY(5px); /* Desce um pouco mais */
+  }
+  75% {
+    transform: translateY(-5px); /* Sobe de novo */
+  }
 }
 
-h1{
+@keyframes pulsarGlow {
+  0% {
+    /* Começa sem sombra, colado no botão */
+    box-shadow: 0 0 0 0 rgba(252, 226, 13, 0.8);
+  }
+  70% {
+    /* A sombra se expande (15px) e fica transparente */
+    box-shadow: 0 0 0 15px rgba(252, 226, 13, 0);
+  }
+  100% {
+    /* Reseta suavemente */
+    box-shadow: 0 0 0 0 rgba(252, 226, 13, 0);
+  }
+}
+
+h1 {
   font-family: "Anton", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-h2{
+h2 {
   font-family: "Amiko", sans-serif;
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
 }
 
-.chamada {
-    position: relative; 
-    overflow: hidden;  
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
+div.chamada a {
+  font-family: "Amiko", sans-serif;
+  font-weight: 1000;
+  font-size: max(16px, 1.8vw);
+  color: black;
+
+  text-decoration: none;
+  padding: 15px 50px;
+  border-radius: 50px;
+  border: 2px solid #fce20d;
+  margin-top: 2rem;
+  cursor: pointer;
+
+  background: #fce20d;
+  position: relative;
+  z-index: 999;
+
+  overflow: visible;
+  display: inline-block;
+  transition: color 0.4s ease-in-out;
+  cursor: pointer;
+  animation: pulsarGlow 2s infinite;
 }
 
-.chamada h1, .chamada h2 {
-    position: relative;
-    z-index: 2;
+div.chamada a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #fce748;
+  z-index: -1;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: width 0.4s ease-in-out;
+}
+
+div.chamada a:hover::before {
+  width: calc(100% + 4px);
+}
+div.chamada a:hover {
+  opacity: 0.8;
+  animation: none;
+  border-color: #fce748;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.chamada h1,
+.chamada h2 {
+  position: relative;
+  z-index: 2;
 }
 
 #wind-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1; 
-    -webkit-mask-image: linear-gradient(to right, transparent 15%, black 30%, black 70%, transparent 85%);
-    mask-image: linear-gradient(to right, transparent 15%, black 30%, black 70%, transparent 85%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 15%,
+    black 30%,
+    black 70%,
+    transparent 85%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 15%,
+    black 30%,
+    black 70%,
+    transparent 85%
+  );
 }
 
 .wind-line {
-    position: absolute;
-    width: 1px; 
-    background: linear-gradient(to bottom, 
-        transparent 0%, 
-        rgba(0, 0, 0, 0.05) 20%,
-        rgba(0, 0, 0, 0.5) 50%,  
-        rgba(0, 0, 0, 0.05) 80%, 
-        transparent 100%
-    );
-    top: -400px; 
-    will-change: transform, opacity; 
-    --curve-dir: 1; 
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.05) 20%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.05) 80%,
+    transparent 100%
+  );
+  top: -400px;
+  will-change: transform, opacity;
+  --curve-dir: 1;
 }
 
 @keyframes windDrop {
-    0% {
-        /* Começa reto */
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: var(--wind-opacity, 0.8);
-    }
-    65% {
-        transform: translate(0, 90%);
-        opacity: var(--wind-opacity, 0.8);
-    }
-    100% {
-        transform: translate(calc(var(--curve-dir) * 120px), 140%) rotate(calc(var(--curve-dir) * 15deg));
-        opacity: 0;
-    }
+  0% {
+    /* Começa reto */
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--wind-opacity, 0.8);
+  }
+  65% {
+    transform: translate(0, 90%);
+    opacity: var(--wind-opacity, 0.8);
+  }
+  100% {
+    transform: translate(calc(var(--curve-dir) * 120px), 140%)
+      rotate(calc(var(--curve-dir) * 15deg));
+    opacity: 0;
+  }
 }
 
 /*== Header ==*/
@@ -165,67 +205,120 @@ header {
 }
 
 /*== NaveBar ==*/
-header nav#nav-esq
-{
+header nav#nav-esq {
   width: 100%;
   height: 95px;
-  background: #148CFC;
+  background: #148cfc;
 
   display: flex;
+  justify-content: center;
   flex-flow: row;
   align-items: center;
 
+  position: relative;
 }
 
-header nav#nav-esq div#logo{
+header nav#nav-esq div#logo {
   width: 100px;
   height: 85px;
-  margin-left: 3rem;
-  margin-top: 3rem;
+  position: absolute;
+  left: 4rem; /* Distância da esquerda */
+  top: 35%;
+  align-items: center;
 }
-header nav#nav-esq div#logo img{
+header nav#nav-esq div#logo img {
   max-width: 100%;
   max-height: 100%;
+  margin: 0;
 }
 
 /* ==Menu Hamburguer==*/
-header nav#nav-esq ul#icone-menu{
+header nav#nav-esq ul#icone-menu {
   display: none;
 }
 
-header nav#nav-esq ul#icone-menu li{
+header nav#nav-esq ul#icone-menu li {
   list-style: none;
+  margin: 0;
 }
 
-header nav#nav-esq ul#icone-menu li ion-icon{
+header nav#nav-esq ul#icone-menu li ion-icon {
   font-size: 50px;
   color: black;
   margin-right: 2rem;
 }
 
-header nav#nav-esq ul#menu-principal{
-  margin-left: 5rem;
+/*==Menu Principal==*/
+header nav#nav-esq ul#menu-principal {
+  margin: 0;
+  padding: 0;
+  align-items: center;
   display: flex;
+  text-align: center;
   flex-flow: row wrap;
+  margin-left: 3rem;
 }
 
-header nav#nav-esq ul#menu-principal li{
+header nav#nav-esq ul#menu-principal li {
   list-style: none;
   margin-right: 5rem;
 }
 
-header nav#nav-esq ul#menu-principal li a{
+header nav#nav-esq ul#menu-principal li a {
   text-decoration: none;
-  color:black;
+  margin: 0;
+  color: black;
   font-size: 150%;
-  padding-bottom: 10px;
+  justify-content: center;
+  text-align: center;
   font-family: "Anton", sans-serif;
   transition: all 0.3s ease-out;
 }
-header nav#nav-esq ul#menu-principal li a:hover{
-  border-bottom: 1px solid #FCE20D;
-  opacity: .6;
-  color:#FCE20D;
+header nav#nav-esq ul#menu-principal li a:hover {
+  border-bottom: 1px solid #fce20d;
+  opacity: 0.9;
+  color: #fce20d;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
+}
+
+/* == CHAMADA == */
+header div.chamada {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+header div.chamada h1 img {
+  max-width: 100%;
+  height: auto;
+  width: 300px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  animation: flutuarSuave 7s ease-in-out infinite;
+}
+
+header div.chamada h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+  max-width: 600px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.5;
+}
+
+/* == SOBRE == */
+section.sobre {
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-right: 30px;
 }
