@@ -1,90 +1,91 @@
 // função mobile
-function mostramenu(){
-    // Remove qualquer classe de saída e adiciona a de entrada
-    $('header nav#nav-esq ul#menu-principal')
-        .removeClass('animate__fadeOutRight')
-        .addClass('animate__animated animate__fadeInRight animate__slow')
-        .css('display', 'flex');
+function mostramenu() {
+  // Mostra o menu principal com animação
+  $("header nav#nav-esq ul#menu-principal")
+    .removeClass("animate__fadeOutRight")
+    .addClass("animate__animated animate__fadeInRight animate")
+    .css("display", "flex");
 
-    $('header nav#nav-esq ul#icone-menu li#menu').css('display', 'none');
-    $('header nav#nav-esq ul#icone-menu li#menuX').css('display', 'flex');
+  // Adiciona a classe 'ativo' no pai dos ícones para disparar o CSS
+  $("header nav#nav-esq ul#icone-menu").addClass("ativo");
+  $("body").addClass("no-scroll");
 }
 
-function escondermenu(){
-    // Remove a classe de entrada e adiciona a de saída
-    $('header nav#nav-esq ul#menu-principal')
-        .removeClass('animate__fadeInRight')
-        .addClass('animate__animated animate__fadeOutRight animate__slow');
+function escondermenu() {
+  $("header nav#nav-esq ul#menu-principal")
+    .removeClass("animate__fadeInRight")
+    .addClass("animate__animated animate__fadeOutRight animate");
 
-    // Espera a animação de saída terminar para esconder
-    setTimeout(() => {
-        $('header nav#nav-esq ul#menu-principal')
-            .css('display', 'none')
-            .removeClass('animate__fadeOutRight');
-    }, 1000); // Duração da animação com animate__slow
+  setTimeout(() => {
+    $("header nav#nav-esq ul#menu-principal")
+      .css("display", "none")
+      .removeClass("animate__fadeOutRight");
+  }, 500);
 
-    $('header nav#nav-esq ul#icone-menu li#menu').css('display', 'flex');
-    $('header nav#nav-esq ul#icone-menu li#menuX').css('display', 'none');
+  // Remove a classe 'ativo' para os ícones voltarem ao normal
+  $("header nav#nav-esq ul#icone-menu").removeClass("ativo");
+  $("body").removeClass("no-scroll");
 }
 
 let controle = true;
-$('header nav#nav-esq ul#icone-menu').click(function(){
-    if(controle==true){
-        mostramenu();
-        controle = false;
-    }else{
-        escondermenu();
-        controle = true;
-    }
+$("header nav#nav-esq ul#icone-menu").click(function () {
+  if (controle == true) {
+    mostramenu();
+    controle = false;
+  } else {
+    escondermenu();
+    controle = true;
+  }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const windContainer = document.getElementById('wind-container');
+document.addEventListener("DOMContentLoaded", function () {
+  const windContainer = document.getElementById("wind-container");
 
-    // Configurações
-    const windDensity = 180; // Aumentei um pouco para ficar mais sutil
+  const windDensity = 180;
 
-    function createWindLine() {
-        const line = document.createElement('div');
-        line.classList.add('wind-line');
+  function createWindLine() {
+    const line = document.createElement("div");
+    line.classList.add("wind-line");
 
-        // --- MUDANÇA 1: Centralizando o vento ---
-        // Em vez de 0 a 100%, vamos gerar entre 25% e 75%.
-        // Math.random() * (max - min) + min
-        // Math.random() * (75 - 25) + 25  => Math.random() * 50 + 25
-        const positionPercent = Math.random() * 50 + 25;
-        line.style.left = positionPercent + '%';
+    const positionPercent = Math.random() * 50 + 25;
+    line.style.left = positionPercent + "%";
 
-        // --- MUDANÇA 2: Definindo a direção da curva ---
-        // Se a posição for menor que 50% (esquerda), a direção é -1.
-        // Se for maior que 50% (direita), a direção é 1.
-        let curveDirection = positionPercent < 50 ? -1 : 1;
-        
-        // Passamos essa informação para o CSS através de uma variável
-        line.style.setProperty('--curve-dir', curveDirection);
+    let curveDirection = positionPercent < 50 ? -1 : 1;
 
+    line.style.setProperty("--curve-dir", curveDirection);
 
-        // Altura (rastros longos)
-        const height = Math.random() * 300 + 250; 
-        line.style.height = height + 'px';
+    const height = Math.random() * 300 + 250;
+    line.style.height = height + "px";
 
-        // Velocidade (rápida)
-        const duration = Math.random() * 0.6 + 0.5;
+    const duration = Math.random() * 0.6 + 0.5;
 
-        // Opacidade variável
-        const randomOpacity = Math.random() * 0.5 + 0.2;
-        line.style.setProperty('--wind-opacity', randomOpacity);
-        
-        // Animação "ease-in" para começar lento e acelerar na curva final fica melhor
-        line.style.animation = `windDrop ${duration}s ease-in infinite`;
+    const randomOpacity = Math.random() * 0.5 + 0.2;
+    line.style.setProperty("--wind-opacity", randomOpacity);
 
-        windContainer.appendChild(line);
+    line.style.animation = `windDrop ${duration}s ease-in infinite`;
 
-        // Limpeza
-        setTimeout(() => {
-            line.remove();
-        }, duration * 1000 + 100); 
-    }
+    windContainer.appendChild(line);
 
-    setInterval(createWindLine, windDensity);
+    setTimeout(
+      () => {
+        line.remove();
+      },
+      duration * 1000 + 100,
+    );
+  }
+
+  setInterval(createWindLine, windDensity);
+});
+$(window).resize(function () {
+  if ($(window).width() > 630) {
+    // Se a tela for maior que 630px, remove o display: flex/none e as animações
+    $("header nav#nav-esq ul#menu-principal").css("display", "");
+    $("header nav#nav-esq ul#menu-principal").removeClass(
+      "animate__animated animate__fadeInRight animate__fadeOutRight",
+    );
+
+    // Reseta o controle do menu hamburguer
+    controle = true;
+    $("header nav#nav-esq ul#icone-menu").removeClass("ativo");
+  }
 });
