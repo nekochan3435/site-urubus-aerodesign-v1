@@ -37,6 +37,13 @@ $("header nav#nav-esq ul#icone-menu").click(function () {
     controle = true;
   }
 });
+$("header nav#nav-esq ul#menu-principal li a").click(function () {
+  // Verifica se a tela é pequena (mobile)
+  if ($(window).width() <= 630) {
+    escondermenu();
+    controle = true; // Reseta a variável de controle para o próximo clique abrir
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const windContainer = document.getElementById("wind-container");
@@ -87,5 +94,19 @@ $(window).resize(function () {
     // Reseta o controle do menu hamburguer
     controle = true;
     $("header nav#nav-esq ul#icone-menu").removeClass("ativo");
+  }
+});
+window.addEventListener("scroll", function() {
+  var header = document.querySelector("header");
+  var divisor = document.querySelector(".divisor-suave");
+  
+  // Calcula a altura do header (a seção Home inteira)
+  var alturaHome = header.offsetHeight;
+  
+  // Se o scroll passou de 80% da altura da Home, mostra a linha
+  if (window.scrollY > (alturaHome - 150)) {
+    divisor.classList.add("ativo");
+  } else {
+    divisor.classList.remove("ativo");
   }
 });
