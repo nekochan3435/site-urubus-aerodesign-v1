@@ -108,6 +108,11 @@
     height: 100vh;
   }
   /*== SOBRE ==*/
+
+  #sobre .card cartao3 {
+    flex-direction: column-reverse;
+  }
+
   .sobre-mestre .row {
     flex-direction: column-reverse;
   }
@@ -117,12 +122,61 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  
+
   /* Remove margens laterais negativas que as vezes sobram */
   .sobre-mestre .container {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  @media (max-width: 768px) {
+    .urubus-carousel-img {
+      height: 75vh !important; /* Aumentei para 75% da tela */
+      object-fit: cover;
+    }
+
+    /* 2. Configuração da CAIXA DE TEXTO no celular */
+    .caption-urubus {
+      display: block !important; /* OBRIGA a aparecer */
+      opacity: 1 !important; /* Garante que não está transparente */
+      visibility: visible !important;
+
+      position: absolute !important;
+      width: 90% !important; /* Ocupa 90% da largura da tela */
+      left: 5% !important; /* Centraliza (5% esq + 90% + 5% dir) */
+      right: 5% !important;
+      bottom: 20px !important; /* Cola no fundo */
+
+      padding: 1rem !important; /* Padding menor que no desktop */
+      margin: 0 !important;
+
+      /* Garante que o fundo branco e a borda apareçam */
+      background-color: #ffffff !important;
+      border: 4px solid #fce20d !important;
+      z-index: 100 !important; /* Fica em cima da imagem */
+    }
+
+    /* 3. Ajuste das fontes para não estourarem a caixa */
+    .caption-urubus h1 {
+      font-size: 1.5rem !important;
+      margin-bottom: 5px !important;
+    }
+
+    .caption-urubus h2 {
+      font-size: 0.9rem !important;
+      white-space: normal !important; /* Permite quebrar linha se o texto for longo */
+    }
+
+    /* 4. Ajuste das setas para não ficarem em cima do texto */
+    .carousel-control-prev,
+    .carousel-control-next {
+      height: 100% !important; /* Ocupa a altura toda */
+      top: 0 !important;
+      bottom: 0 !important;
+      align-items: center !important; /* CENTRALIZA VERTICALMENTE */
+      padding-top: 0 !important; /* Remove o padding que empurrava pra baixo */
+      width: 15% !important; /* Área de clique lateral */
+      z-index: 20;
+    }
+  }
 }
-
-
