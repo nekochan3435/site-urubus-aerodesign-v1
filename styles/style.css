@@ -330,50 +330,49 @@ section.sobre {
   margin-right: 30px;
 }
 
-section div.sobre-title h1{
+section div.sobre-title h1 {
   font-size: max(50px, 1.5vw);
   margin-bottom: 2rem;
 }
 
-section div.sobre-box-title h1{
+section div.sobre-box-title h1 {
   font-size: max(50px, 1.5vw);
   margin-bottom: 2rem;
 }
 
-section div.texto-sobre h2{
+section div.texto-sobre h2 {
   font-size: max(10px, 1.5vw);
 }
-section div.sobre-mestre h1{
+section div.sobre-mestre h1 {
   font-size: max(50px, 1.5vw);
   margin-bottom: 2rem;
 }
 
 #sobre .card {
-  border: 2px solid #FCE20D; 
+  border: 2px solid #fce20d;
   border-radius: 15px;
-  border-width: 4px; 
-  background-color: #fff; 
+  border-width: 4px;
+  background-color: #fff;
   transition: all 0.3s ease-in-out;
 }
 
-
 #sobre .card:hover {
-  border-color: #148CFC; 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important; 
-  transform: translateY(-5px); 
+  border-color: #148cfc;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px);
 }
 
 .divisor-suave {
   border: 0;
   height: 4px;
   background-image: linear-gradient(
-    to right, 
-    rgba(252, 226, 13, 1), 
-    rgba(252, 226, 13, 1), 
+    to right,
+    rgba(252, 226, 13, 1),
+    rgba(252, 226, 13, 1),
     rgba(252, 226, 13, 1)
   );
   width: 100%;
-  
+
   position: absolute;
   bottom: 0;
   left: 0;
@@ -390,5 +389,92 @@ section div.sobre-mestre h1{
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 95px; 
+  scroll-padding-top: 95px;
 }
+
+/* == EQUIPE == */
+.urubus-carousel-img {
+  height: 500px; /* Ajuste a altura conforme necessário */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  filter: brightness(
+    0.7
+  ); /* Escurece um pouco a imagem para o texto destacar */
+}
+
+.bg-dark-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Preto com 60% de opacidade */
+  padding: 20px;
+  border-radius: 10px;
+  bottom: 40px; /* Sobe um pouco a legenda */
+}
+
+.caption-urubus {
+  position: absolute; /* ISSO FAZ O TEXTO FICAR SOBRE A IMAGEM */
+  z-index: 10; /* Garante que fique acima da imagem */
+  background-color: #ffffff;
+  border: 4px solid #fce20d;
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #000000;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* Garante que o texto fique centralizado */
+}
+
+/* Estilo específico para o Título dentro da caixa branca */
+.caption-urubus h1 {
+  font-family: "Anton", sans-serif;
+  color: #000000; /* Título preto */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.caption-urubus h2 {
+  font-family: "Arial Nova", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #000000; /* Título preto */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#carouselAreas {
+  border: 4px solid #fce20d; /* A borda amarela solicitada */
+  border-radius: 15px; /* Mantém o arredondamento */
+  overflow: hidden; /* Essencial: impede que a imagem "vaze" pelos cantos arredondados */
+  box-sizing: border-box; /* Garante que a borda conte no tamanho total */
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 15%; /* Largura padrão do clique */
+  height: 100%; /* Altura total */
+  top: 0; /* Começa do topo */
+  bottom: 0;
+  background: none; /* Remove cores de fundo sólidas */
+  opacity: 1; /* Transparência padrão */
+  border: none; /* Sem bordas */
+  clip-path: none; /* Remove o recorte de triângulo */
+  display: flex;
+  align-items: center; /* Centraliza a seta verticalmente */
+  justify-content: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3rem; /* Tamanho da seta */
+  height: 3rem;
+  filter: none !important;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23148cfc'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") !important;
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23148cfc'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+
+  
