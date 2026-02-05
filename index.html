@@ -39,7 +39,7 @@
     />
   </head>
   <body>
-    <header>
+    <header id="home">
       <nav id="nav-esq">
         <div id="logo">
           <img src="./images/headermenuUrubusPreto.png" alt="logo" />
@@ -50,55 +50,113 @@
         </ul>
 
         <ul id="menu-principal">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#">SOBRE</a></li>
-          <li><a href="#">EQUIPE</a></li>
-          <li><a href="#">TRAJETÓRIA</a></li>
-          <li><a href="#">PATROCINADORES</a></li>
-          <li><a href="#">CONTATO</a></li>
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#sobre">SOBRE</a></li>
+          <li><a href="#equipe">EQUIPE</a></li>
+          <li><a href="#trajet">TRAJETÓRIA</a></li>
+          <li><a href="#patro">PATROCINADORES</a></li>
+          <li><a href="#contato">CONTATO</a></li>
         </ul>
+         <hr class="divisor-suave" />
       </nav>
 
       <div class="chamada">
         <div id="wind-container"></div>
         <h1><img src="./images/homeUrubusLogo.png" alt="logoHome" /></h1>
-        <h2>Equipe de Aerodesign da Universidade de Campinas</h2>
-        <a href="#" target="_blank">CONHEÇA NOSSA EQUIPE</a>
+        <h2>Equipe de Aerodesign da Universidade Estadual de Campinas</h2>
+        <h1><a href="#sobre">CONHEÇA NOSSA EQUIPE</a></h1>
       </div>
     </header>
 
     <main>
-      <section class="SOBRE">
-        <div class="sobre-mestre">
-          <div class="container my-5">
-            <div
-              class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
-            >
-              <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-                <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
-                  PLACEHOLDER
-                </h1>
-                <p class="lead">blablablablablablablablablablablabla</p>
-                <div
-                  class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
-                ></div>
-              </div>
-
-              <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <img
-                  class="rounded-lg-3"
-                  src="./images/homeUrubusLogo.png"
-                  alt="Bootstrap Docs"
-                  width="720"
-                />
-              </div>
+      <section class="SOBRE" id="sobre">
+        <div class="sobre-title">
+          <div class="text-secondary text-center">
+            <div class="py-5 pb-0">
+              <h1 class="display- fw-bold text-black mb-1">QUEM SOMOS</h1>
             </div>
           </div>
-          <div class="row align-items-md-stretch">
-            <div class="col-md-6">
-              <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                <h2>Placeholder</h2>
-                <p>placeholder</p>
+        </div>
+
+        <div class="sobre-mestre">
+          <div class="container col-xxl-8 px-4 py-5 pb-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img
+                  src="./images/urubusfotomagnifica.jpg"
+                  class="card-img-top d-block mx-auto img-fluid"
+                  alt="Bootstrap Themes"
+                  style="max-width: 400px; width: 100%; border: 4px solid #FCE20D; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);"
+                  width="500"
+                  height="350"
+                  loading="lazy"
+                />
+              </div>
+              <div class="col-lg-6" id="texto-sobre">
+                <h1
+                  class="display-5 fw-bold text-body-emphasis lh-1 mb-2 text-center"
+                  id="sobre-box-title"
+                >
+                  A EQUIPE
+                </h1>
+                <h2>
+                  <p class="fs-5 mt-4 text-black mb-4">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  </p>
+                </h2>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                      <div class="card-body">
+                        <h1 class="card-title text-black mb-1" id="cartao1">
+                          Valores e missão
+                        </h1>
+                        <p class="fs-5 text-black">
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card h-100 shadow-sm">
+                      <div class="card-body">
+                        <h1 class="card-title text-black mb-1" id="cartao2">
+                          Visão e Futuro
+                        </h1>
+                        <p class="fs-5 text-black">
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8 mx-auto">
+                    <div class="card h-100 shadow-sm">
+                      <div class="card-body">
+                        <h1
+                          class="card-title text-black fs-1 mb-1"
+                          id="cartao3"
+                        >
+                          Não caminhamos sozinhos
+                        </h1>
+                        <p class="fs-5 text-black">
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
