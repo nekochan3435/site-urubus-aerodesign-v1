@@ -82,7 +82,7 @@
       rgba(252, 226, 13, 0.65)
     );
     position: fixed;
-    top: 90px;
+    top: 75px;
     z-index: 1001;
     backdrop-filter: blur(0.75px);
   }
@@ -108,3 +108,20 @@
     height: 100vh;
   }
 }
+
+/*== SOBRE ==*/
+.sobre-mestre .row {
+    flex-direction: column-reverse;
+  }
+
+  /* Dá um espaço entre o último cartão e a imagem (que agora está embaixo) */
+  .sobre-mestre .col-10 img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  /* Remove margens laterais negativas que as vezes sobram */
+  .sobre-mestre .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
