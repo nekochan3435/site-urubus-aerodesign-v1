@@ -107,10 +107,8 @@
     overflow: hidden;
     height: 100vh;
   }
-}
-
-/*== SOBRE ==*/
-.sobre-mestre .row {
+  /*== SOBRE ==/*
+  .sobre-mestre .row {
     flex-direction: column-reverse;
   }
 
@@ -125,3 +123,5 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+
