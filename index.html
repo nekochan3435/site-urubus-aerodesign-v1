@@ -57,7 +57,7 @@
           <li><a href="#patro">PATROCINADORES</a></li>
           <li><a href="#contato">CONTATO</a></li>
         </ul>
-        <hr class="divisor-suave">
+        <hr class="divisor-suave" />
       </nav>
 
       <div class="chamada">
@@ -86,7 +86,13 @@
                   src="./images/urubusfotomagnifica.jpg"
                   class="card-img-top d-block mx-auto img-fluid"
                   alt="Bootstrap Themes"
-                  style="max-width: 400px; width: 100%; border: 4px solid #FCE20D; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);"
+                  style="
+                    max-width: 400px;
+                    width: 100%;
+                    border: 4px solid #fce20d;
+                    border-radius: 20px;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+                  "
                   width="500"
                   height="350"
                   loading="lazy"
@@ -153,12 +159,208 @@
                           elit, sed do eiusmod tempor incididunt ut labore et
                           dolore magna aliqua."
                         </p>
+                        <div class="d-flex justify-content-center mt-3">
+                          <a
+                            href="#patro"
+                            class="btn btn-primary btn-lg text-black"
+                            style="
+                              background: #fce20d;
+                              border: 0;
+                              font-family: &quot;Anton&quot;;
+                            "
+                          >
+                            Patrocinadores
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="EQUIPE" id="equipe">
+        <div class="container py-5">
+          <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-black">NOSSAS ÁREAS</h1>
+            <h2>
+              <p class="lead text-black">
+                Conheça os departamentos técnicos da Urubus Aerodesign
+              </p>
+            </h2>
+          </div>
+
+          <div
+            id="carouselAreas"
+            class="carousel slide carousel-fade shadow-lg rounded"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselAreas"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselAreas"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselAreas"
+                data-bs-slide-to="2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselAreas"
+                data-bs-slide-to="3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselAreas"
+                data-bs-slide-to="4"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselAreas"
+                data-bs-slide-to="5"
+              ></button>
+            </div>
+
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active" data-bs-interval="4000">
+                <img
+                  src="https://source.unsplash.com/1200x600/?airplane,wing"
+                  class="d-block w-100 urubus-carousel-img"
+                  alt="Aerodinâmica"
+                />
+                <div class="carousel-caption caption-urubus">
+                  <h1>AERODINÂMICA</h1>
+                  <h2>
+                    <p class="fs-5 mt-3 text-black">
+                      "Responsável pelo estudo das forças do ar sobre a
+                      aeronave, garantindo sustentação e eficiência."
+                    </p>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="4000">
+                <img
+                  src="https://source.unsplash.com/1200x600/?cockpit,pilot"
+                  class="d-block w-100 urubus-carousel-img"
+                  alt="Estabilidade"
+                />
+                <div class="carousel-caption caption-urubus">
+                  <h1>ESTABILIDADE E CONTROLE</h1>
+                  <h2>
+                    <p class="fs-5 mt-3 text-black">
+                      "Garante que a aeronave seja controlável e mantenha uma
+                      trajetória segura durante o voo."
+                    </p>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="4000">
+                <img
+                  src="https://source.unsplash.com/1200x600/?sky,flight"
+                  class="d-block w-100 urubus-carousel-img"
+                  alt="Desempenho"
+                />
+                <div class="carousel-caption caption-urubus">
+                  <h1>DESEMPENHO</h1>
+                  <h2>
+                    <p class="fs-5 mt-3 text-black">
+                      "Analisa a performance da aeronave, calculando distâncias
+                      de decolagem, pouso e carga paga."
+                    </p>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="4000">
+                <img
+                  src="https://source.unsplash.com/1200x600/?carbonfiber,metal"
+                  class="d-block w-100 urubus-carousel-img"
+                  alt="Estruturas"
+                />
+                <div class="carousel-caption caption-urubus">
+                  <h1>ESTRUTURAS</h1>
+                  <h2>
+                    <p class="fs-5 mt-3 text-black">
+                      "Projeta a fuselagem e componentes para suportar as cargas
+                      de voo com leveza e resistência."
+                    </p>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="4000">
+                <img
+                  src="https://source.unsplash.com/1200x600/?electronics,circuit"
+                  class="d-block w-100 urubus-carousel-img"
+                  alt="Elétrica"
+                />
+                <div class="carousel-caption caption-urubus">
+                  <h1>ELÉTRICA</h1>
+                  <h2>
+                    <p class="fs-5 mt-3 text-black">
+                      "Cuida de toda a parte eletrônica, sistemas de telemetria
+                      e aquisição de dados."
+                    </p>
+                  </h2>
+                </div>
+              </div>
+
+              <div class="carousel-item" data-bs-interval="4000">
+                <img
+                  src="https://source.unsplash.com/1200x600/?team,meeting"
+                  class="d-block w-100 urubus-carousel-img"
+                  alt="Marketing"
+                />
+                <div class="carousel-caption caption-urubus">
+                  <h1>MARKETING</h1>
+                  <h2>
+                    <p class="fs-5 mt-3 text-black">
+                      "Gerencia a imagem da equipe, captação de patrocínios e
+                      divulgação do projeto."
+                    </p>
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselAreas"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselAreas"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Próximo</span>
+            </button>
           </div>
         </div>
       </section>
