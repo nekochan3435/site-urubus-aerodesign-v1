@@ -179,4 +179,39 @@
       z-index: 20;
     }
   }
+  /* --- RESPONSIVIDADE DA TIMELINE --- */
+@media screen and (max-width: 768px) {
+  
+  /* Move a linha para a esquerda */
+  .timeline-container::after {
+    left: 31px;
+  }
+  
+  /* Itens ocupam largura total */
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px; /* Espaço para a linha na esquerda */
+    padding-right: 25px;
+  }
+  
+  /* Reseta posicionamento left/right */
+  .timeline-item.left, 
+  .timeline-item.right {
+    left: 0;
+  }
+  
+  /* Ajusta setas para apontarem sempre para a esquerda */
+  .timeline-item.left .timeline-content::before,
+  .timeline-item.right .timeline-content::before {
+    left: -10px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fce20d transparent transparent;
+  }
+
+  /* Ajusta as bolinhas para a esquerda */
+  .timeline-item.left::after, 
+  .timeline-item.right::after {
+    left: 18px; /* Centraliza na linha que está em 31px */
+  }
+}
 }
