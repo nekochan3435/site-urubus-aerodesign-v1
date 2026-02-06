@@ -213,5 +213,20 @@
   .timeline-item.right::after {
     left: 18px; /* Centraliza na linha que está em 31px */
   }
+  .timeline-item.left,
+  .timeline-item.right {
+    transform: translateX(-30px); /* Começam um pouco para esquerda */
+  }
+  
+  .timeline-item.visible {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sponsor-card {
+    height: 140px; /* Cartões menores no celular */
+    padding: 15px;
+  }
 }
 }
